@@ -78,7 +78,19 @@ const Content = (): ReactElement => {
           currentPosition={position}/>
         <LowerSection>
           <SliderWrap>
-            <Slider min={-1} max={historyEvents.length} defaultValue={historyEvents.length} step={1} onChange={onSliderChange}/>
+            <Slider
+              min={-1}
+              max={historyEvents.length}
+              defaultValue={historyEvents.length}
+              step={1}
+              trackStyle={{
+                backgroundColor: 'rgba(0, 0, 0, 0.3)'
+              }}
+              handleStyle={{
+                borderColor: 'rgba(0, 0, 0, 0.4',
+                boxShadow: 'none'
+              }}
+              onChange={onSliderChange}/>
           </SliderWrap>
           {
             historyEvents[position] !== undefined &&
