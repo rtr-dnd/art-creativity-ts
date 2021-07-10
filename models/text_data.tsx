@@ -1,6 +1,6 @@
 import { ReferencedTextPiece, TextPiece } from './model'
 
-export const kaniText: Array<TextPiece | ReferencedTextPiece> = [
+export const kaniTexts: Array<TextPiece | ReferencedTextPiece> = [
   {
     text: '「おい、'
   },
