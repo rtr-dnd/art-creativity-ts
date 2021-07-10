@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import styled from 'styled-components'
 
-type Props = {
-  title: string | string[]
+interface Props {
+  title: string
   stringTitle: string
   afterGutenberg: boolean
 }
 
 const Wrap = styled.div<{afterGutenberg: boolean}>`
-  font-family: ${({ afterGutenberg }) => afterGutenberg? 'YuMincho' : 'HuiFont'};
+  font-family: ${({ afterGutenberg }) => afterGutenberg ? 'YuMincho' : 'HuiFont'};
 `
 
 const Title = styled.h1`
@@ -16,7 +16,7 @@ const Title = styled.h1`
   color: #f00;
 `
 
-const TextWork = (props: Props) => {
+const TextWork = (props: Props): ReactElement => {
   return (
     <Wrap afterGutenberg={props.afterGutenberg}>
       <Title>{props.stringTitle}</Title>

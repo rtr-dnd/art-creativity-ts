@@ -5,9 +5,9 @@ export enum EventType {
   painting
 }
 
-export type HistoryEvent = {
-  time: string,
-  desc: string,
-  link: string,
+export interface HistoryEvent {
+  time: string
+  desc: string
+  link: string
   type: EventType
-} 
+}

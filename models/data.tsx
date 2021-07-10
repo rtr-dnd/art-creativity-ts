@@ -1,6 +1,6 @@
 import { EventType, HistoryEvent } from './model'
 
-export const kaniEvents: Array<HistoryEvent> = [
+export const kaniEvents: HistoryEvent[] = [
   {
     time: '38億年前',
     desc: '雨水はやがて激流となって、地表を覆い始めました。 今からおよそ38億年前には、地球に海が誕生していたといわれています。',
