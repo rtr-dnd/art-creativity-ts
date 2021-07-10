@@ -6,6 +6,7 @@ export enum EventType {
 }
 
 export interface HistoryEvent {
+  title: string
   time: string
   desc: string
   link: string
