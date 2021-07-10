@@ -6,7 +6,7 @@ import TextWork from '../../components/TextWork'
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
 import { EventType, HistoryEvent } from '../../models/model'
-import { kaniEvents } from '../../models/data'
+import { kaniEvents } from '../../models/history_data'
 import Event from '../../components/Event'
 
 const SliderWrap = styled.div`
@@ -62,15 +62,11 @@ const Content = (): ReactElement => {
     return (
       <>
         <p>Current position is {position}</p>
-        <TextWork title={id} stringTitle={stringTitle} afterGutenberg={true}/>
-        <TextWork title={id} stringTitle={stringTitle} afterGutenberg={false}/>
+        <TextWork title={id} stringTitle={stringTitle} afterGutenberg={position >= gutenbergIndex}/>
         <SliderWrap>
           <Slider min={0} max={historyEvents.length - 1} defaultValue={historyEvents.length - 1} step={1} onChange={onSliderChange}/>
         </SliderWrap>
-        {
-          historyEvents.length > 0 &&
-            <Event event={historyEvents[position]}/>
-        }
+        <Event event={historyEvents[position]}/>
       </>
     )
   }
