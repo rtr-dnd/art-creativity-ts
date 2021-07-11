@@ -8,7 +8,9 @@ import 'rc-slider/assets/index.css'
 import { EventType, HistoryEvent, ReferencedTextPiece, TextPiece } from '../../models/model'
 import { kaniEvents } from '../../models/history_data'
 import Event from '../../components/Event'
-import { kaniTexts } from '../../models/text_data'
+import { kaniTexts, kaniTitle } from '../../models/text_data'
+import ImageWork from '../../components/ImageWork'
+import { ImageTitle, kaniImages, kaniTitleImages } from '../../components/image_data'
 
 const LowerSection = styled.div`
   height: 50vh;
@@ -29,6 +31,9 @@ const Content = (): ReactElement => {
   let stringTitle = ''
   let historyEvents: HistoryEvent[] = []
   let texts: Array<TextPiece | ReferencedTextPiece> = []
+  let titles: Array<TextPiece | ReferencedTextPiece> = []
+  let imageTitles: ImageTitle[] = []
+  let images: ReactElement[] = []
   let paintingIndex: number = 0
   let letterIndex: number = 0
   let gutenbergIndex: number = 0
@@ -46,6 +51,9 @@ const Content = (): ReactElement => {
         stringTitle = '蟹工船'
         historyEvents = kaniEvents
         texts = kaniTexts
+        titles = kaniTitle
+        imageTitles = kaniTitleImages
+        images = kaniImages
         setIndex(kaniEvents)
         break
       default:
@@ -69,13 +77,24 @@ const Content = (): ReactElement => {
   if (typeof (id) === 'string' && stringTitle !== '') {
     return (
       <>
-        <TextWork
+        {
+          position >= letterIndex
+            ? <TextWork
           title={id}
           stringTitle={stringTitle}
           texts={texts}
+          titles={titles}
           letterIndex={letterIndex}
           gutenbergIndex={gutenbergIndex}
           currentPosition={position}/>
+            : <ImageWork
+            title={id}
+            paintingIndex={paintingIndex}
+            currentPosition={position}
+            imageTitles={imageTitles}
+            images={images}
+           />
+        }
         <LowerSection>
           <SliderWrap>
             <Slider

@@ -75,3 +75,14 @@ export const kaniTexts: Array<TextPiece | ReferencedTextPiece> = [
     text: '臭かった。'
   }
 ]
+
+export const kaniTitle: Array<TextPiece | ReferencedTextPiece> = [
+  {
+    text: '蟹',
+    reference: 2
+  },
+  {
+    text: '工船',
+    reference: 8
+  }
+]

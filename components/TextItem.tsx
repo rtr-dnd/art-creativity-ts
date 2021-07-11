@@ -17,7 +17,7 @@ interface ReferenceTextItemProps {
   state: ReferenceTextItemState
 }
 
-const Span = styled.span`
+const TextSpan = styled.span`
   font-size: 16px;
   line-height: 2.2rem;
   letter-spacing: 4px;
@@ -27,11 +27,11 @@ const Span = styled.span`
 
 const TextItem = (props: TextItemProps): ReactElement => {
   return (
-    <Span>{props.text}</Span>
+    <TextSpan>{props.text}</TextSpan>
   )
 }
 
-const ActiveSpan = styled(Span)<{state: ReferenceTextItemState}>`
+const ActiveTextSpan = styled(TextSpan)<{state: ReferenceTextItemState}>`
   background-color: ${({ state }) => {
     switch (state) {
       case ReferenceTextItemState.shown:
@@ -48,8 +48,42 @@ const ActiveSpan = styled(Span)<{state: ReferenceTextItemState}>`
 
 const ReferencedTextItem = (props: ReferenceTextItemProps): ReactElement => {
   return (
-    <ActiveSpan state={props.state}>{props.text}</ActiveSpan>
+    <ActiveTextSpan state={props.state}>{props.text}</ActiveTextSpan>
   )
 }
 
-export { TextItem, ReferencedTextItem }
+const TitleSpan = styled.span`
+  font-size: 24px;
+  line-height: 2.2rem;
+  letter-spacing: 4px;
+  padding: 0.2rem 0 0.2rem 2px;
+  box-sizing: border-box;
+`
+
+const TitleItem = (props: TextItemProps): ReactElement => {
+  return (
+    <TitleSpan>{props.text}</TitleSpan>
+  )
+}
+
+const ActiveTitleSpan = styled(TitleSpan)<{state: ReferenceTextItemState}>`
+  background-color: ${({ state }) => {
+    switch (state) {
+      case ReferenceTextItemState.shown:
+        return 'transparent'
+      case ReferenceTextItemState.active:
+        return colors.bgYellow
+      default:
+        return '#000'
+    }
+  }};
+  outline-color: rgba(0, 0, 0, 0.7);
+  outline: ${({ state }) => state === ReferenceTextItemState.active ? '1px solid' : 'none'};
+`
+
+const ReferencedTitleItem = (props: ReferenceTextItemProps): ReactElement => {
+  return (
+    <ActiveTitleSpan state={props.state}>{props.text}</ActiveTitleSpan>
+  )
+}
+export { TextItem, ReferencedTextItem, TitleItem, ReferencedTitleItem }
