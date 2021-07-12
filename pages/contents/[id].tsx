@@ -33,7 +33,7 @@ const Content = (): ReactElement => {
   let texts: Array<TextPiece | ReferencedTextPiece> = []
   let titles: Array<TextPiece | ReferencedTextPiece> = []
   let imageTitles: ImageTitle[] = []
-  let images: ReactElement[] = []
+  let images: string[] = []
   let paintingIndex: number = 0
   let letterIndex: number = 0
   let gutenbergIndex: number = 0

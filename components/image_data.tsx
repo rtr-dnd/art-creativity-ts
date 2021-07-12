@@ -2,15 +2,26 @@
 import { ReactElement } from 'react'
 import Image from 'next/image'
 
-export const kaniImages: ReactElement[] = [
-  <Image src="/images/kanikousen/-1.png" alt="カニの画像" layout="fill" objectFit="contain"/>,
-  <Image src="/images/kanikousen/0.png" alt="カニの画像" layout="fill" objectFit="contain"/>,
-  <Image src="/images/kanikousen/1.png" alt="カニの画像" layout="fill" objectFit="contain"/>,
-  <Image src="/images/kanikousen/2.png" alt="カニの画像" layout="fill" objectFit="contain"/>,
-  <Image src="/images/kanikousen/3.png" alt="カニの画像" layout="fill" objectFit="contain"/>,
-  <Image src="/images/kanikousen/4.png" alt="カニの画像" layout="fill" objectFit="contain"/>,
-  <Image src="/images/kanikousen/5.png" alt="カニの画像" layout="fill" objectFit="contain"/>,
-  <Image src="/images/kanikousen/6.png" alt="カニの画像" layout="fill" objectFit="contain"/>
+// export const kaniImages: ReactElement[] = [
+//   <Image src="/images/kanikousen/-1.png" alt="カニの画像" layout="fill" objectFit="contain"/>,
+//   <Image src="/images/kanikousen/0.png" alt="カニの画像" layout="fill" objectFit="contain"/>,
+//   <Image src="/images/kanikousen/1.png" alt="カニの画像" layout="fill" objectFit="contain"/>,
+//   <Image src="/images/kanikousen/2.png" alt="カニの画像" layout="fill" objectFit="contain"/>,
+//   <Image src="/images/kanikousen/3.png" alt="カニの画像" layout="fill" objectFit="contain"/>,
+//   <Image src="/images/kanikousen/4.png" alt="カニの画像" layout="fill" objectFit="contain"/>,
+//   <Image src="/images/kanikousen/5.png" alt="カニの画像" layout="fill" objectFit="contain"/>,
+//   <Image src="/images/kanikousen/6.png" alt="カニの画像" layout="fill" objectFit="contain"/>
+// ]
+
+export const kaniImages: string[] = [
+  '/images/kanikousen/-1.png',
+  '/images/kanikousen/0.png',
+  '/images/kanikousen/1.png',
+  '/images/kanikousen/2.png',
+  '/images/kanikousen/3.png',
+  '/images/kanikousen/4.png',
+  '/images/kanikousen/5.png',
+  '/images/kanikousen/6.png'
 ]
 
 export interface ImageTitle {
