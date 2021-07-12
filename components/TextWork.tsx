@@ -31,6 +31,7 @@ const TextItemsWrap = styled.div<{isActive: boolean}>`
   font-size: 0;
   box-sizing: border-box;
   max-width: 700px;
+  overflow: scroll;
   padding: 24px 32px;
   outline-color: rgba(0, 0, 0, 0.7);
   outline: ${({ isActive }) => isActive ? '1px solid' : 'none'};

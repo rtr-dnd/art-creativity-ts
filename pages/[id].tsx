@@ -20,11 +20,14 @@ const LowerSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: scroll;
   background-color: ${colors.bgGreyLight};
 `
 
 const SliderWrap = styled.div`
-  width: 400px;
+  // width: 400px;
+  width: 90%;
+  max-width: 400px;
   margin: 24px auto 0;
   padding: 32px 24px;
 `
