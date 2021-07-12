@@ -20,7 +20,7 @@ const LowerSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: scroll;
+  overflow-y: scroll;
   background-color: ${colors.bgGreyLight};
 `
 
