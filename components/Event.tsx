@@ -4,6 +4,7 @@ import { HistoryEvent } from '../models/model'
 
 const Wrap = styled.div`
   padding: 0 24px;
+  width: 100%;
   max-width: 600px;
 `
 const Title = styled.h2`
@@ -13,6 +14,7 @@ const Title = styled.h2`
 `
 const Desc = styled.div`
   font-size: 14px;
+  width: 100%;
   line-height: 1.7rem;
   text-align: center;
   color: rgba(0, 0, 0, 0.7);
