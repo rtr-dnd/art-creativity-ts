@@ -102,6 +102,12 @@ const Content = (): ReactElement => {
               max={historyEvents.length}
               defaultValue={historyEvents.length}
               step={1}
+              // dots
+              dotStyle={{
+                borderColor: 'rgba(0, 0, 0, 0.3)'
+                // border: 'none',
+                // backgroundColor: 'rgba(0, 0, 0, 0.1)'
+              }}
               trackStyle={{
                 backgroundColor: 'rgba(0, 0, 0, 0.3)'
               }}
