@@ -37,13 +37,23 @@ export const kaniTitleImages: ImageTitle[] = [
     end: 1
   },
   {
-    image: <Image src="/images/kanikousen/kani-image.gif" alt="カニの写真" layout="fill" objectFit="contain"/>,
+    image: <Image src="/images/kanikousen/kani-image-highlight.png" alt="カニの写真" layout="fill" objectFit="contain"/>,
     start: 2,
+    end: 2
+  },
+  {
+    image: <Image src="/images/kanikousen/kani-image.png" alt="カニの写真" layout="fill" objectFit="contain"/>,
+    start: 3,
     end: 3
   },
   {
-    image: <Image src="/images/kanikousen/kani-picture.png" alt="カニの絵" layout="fill" objectFit="contain"/>,
+    image: <Image src="/images/kanikousen/kani-picture-highlight.png" alt="カニの絵" layout="fill" objectFit="contain"/>,
     start: 4,
+    end: 4
+  },
+  {
+    image: <Image src="/images/kanikousen/kani-picture.png" alt="カニの写真" layout="fill" objectFit="contain"/>,
+    start: 5,
     end: 100
   }
 ]
