@@ -6,6 +6,6 @@ export const colors = {
 }
 
 export const fonts = {
-  yuMincho: '"游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif',
+  yuMincho: '"游明朝体", "Yu Mincho", YuMincho, "Noto Serif JP", "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif',
   hui: '"HuiFontSubset", HuiFont, sans-serif'
 }
