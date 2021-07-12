@@ -33,7 +33,7 @@ const Event = (props: {event: HistoryEvent}): ReactElement => {
     <Wrap>
       <Title>{props.event.title}：{props.event.time}</Title>
       <Desc>{props.event.desc}</Desc>
-      <Link href={props.event.link}>{props.event.link}</Link>
+      <Link target="_blank" href={props.event.link}>{props.event.link}</Link>
     </Wrap>
   )
 }
