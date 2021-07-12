@@ -1,22 +1,26 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { ReactElement, useEffect, useState } from 'react'
 import { useRouter } from 'next/dist/client/router'
+import Head from 'next/head'
 import styled from 'styled-components'
-import TextWork from '../../components/TextWork'
+import TextWork from '../components/TextWork'
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
-import { EventType, HistoryEvent, ReferencedTextPiece, TextPiece } from '../../models/model'
-import { kaniEvents } from '../../models/history_data'
-import Event from '../../components/Event'
-import { kaniTexts, kaniTitle } from '../../models/text_data'
-import ImageWork from '../../components/ImageWork'
-import { ImageTitle, kaniImages, kaniTitleImages } from '../../components/image_data'
+import { EventType, HistoryEvent, ReferencedTextPiece, TextPiece } from '../models/model'
+import { kaniEvents } from '../models/history_data'
+import Event from '../components/Event'
+import { kaniTexts, kaniTitle } from '../models/text_data'
+import ImageWork from '../components/ImageWork'
+import { ImageTitle, kaniImages, kaniTitleImages } from '../components/image_data'
+import { colors } from '../styles/colors'
+import { kaniTitleTag } from '../models/kaniTitle'
 
 const LowerSection = styled.div`
   height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: ${colors.bgGreyLight};
 `
 
 const SliderWrap = styled.div`
@@ -33,6 +37,7 @@ const Content = (): ReactElement => {
   let texts: Array<TextPiece | ReferencedTextPiece> = []
   let titles: Array<TextPiece | ReferencedTextPiece> = []
   let imageTitles: ImageTitle[] = []
+  let titleTag: (currentPosition: number) => string = (currentPosition: number) => { return '' }
   let images: string[] = []
   let paintingIndex: number = 0
   let letterIndex: number = 0
@@ -47,17 +52,21 @@ const Content = (): ReactElement => {
   // initializing props
   if (typeof (id) === 'string') {
     switch (id) {
-      case 'kanikousen':
+      case 'kani':
         stringTitle = '蟹工船'
         historyEvents = kaniEvents
         texts = kaniTexts
         titles = kaniTitle
         imageTitles = kaniTitleImages
         images = kaniImages
+        titleTag = kaniTitleTag
         setIndex(kaniEvents)
         break
-      default:
+      case '':
         stringTitle = ''
+        break
+      default:
+        stringTitle = 'error'
     }
   }
 
@@ -74,9 +83,12 @@ const Content = (): ReactElement => {
   }
 
   // rendering
-  if (typeof (id) === 'string' && stringTitle !== '') {
+  if (typeof (id) === 'string' && stringTitle !== '' && stringTitle !== 'error') {
     return (
       <>
+      <Head>
+        <title>{titleTag(position)} | 38億年前の蟹工船</title>
+      </Head>
         {
           position >= letterIndex
             ? <TextWork
@@ -125,10 +137,17 @@ const Content = (): ReactElement => {
       </>
     )
   }
+  if (stringTitle === 'error') {
+    return (
+      <>
+        Content not found. query is {id}
+      </>
+    )
+  }
 
   return (
     <>
-      Content not found. query is {id}
+      {/* Content not found. query is {id} */}
     </>
   )
 }

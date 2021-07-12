@@ -34,12 +34,12 @@ export const kaniTitleImages: ImageTitle[] = [
   {
     image: <Image src="/images/kanikousen/empty.png" alt="無の画像" layout="fill" objectFit="contain"/>,
     start: -100,
-    end: 2
+    end: 1
   },
   {
     image: <Image src="/images/kanikousen/kani-image.gif" alt="カニの写真" layout="fill" objectFit="contain"/>,
     start: 2,
-    end: 4
+    end: 3
   },
   {
     image: <Image src="/images/kanikousen/kani-picture.png" alt="カニの絵" layout="fill" objectFit="contain"/>,
