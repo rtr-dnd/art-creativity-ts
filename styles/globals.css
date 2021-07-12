@@ -14,3 +14,10 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: 'HuiFontSubset';
+  src: url('/HuiFont_reduced.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

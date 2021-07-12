@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 import styled from 'styled-components'
-import { colors } from '../styles/colors'
+import { colors } from '../styles/variables'
 
 interface TextItemProps {
   text: string

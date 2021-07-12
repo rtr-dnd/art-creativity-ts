@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 import styled from 'styled-components'
 import { ReferencedTextPiece, TextPiece } from '../models/model'
-import { colors } from '../styles/colors'
+import { colors, fonts } from '../styles/variables'
 import { TextItem, ReferencedTextItem, TitleItem, ReferencedTitleItem, ReferenceTextItemState } from './TextItem'
 import { Wrap } from './Work'
 
@@ -16,7 +16,7 @@ interface Props {
 }
 
 const TextWorkWrap = styled(Wrap)<{afterGutenberg: boolean}>`
-  font-family: ${({ afterGutenberg }) => afterGutenberg ? 'YuMincho' : 'HuiFont'};
+  font-family: ${({ afterGutenberg }) => afterGutenberg ? fonts.yuMincho : fonts.hui};
 `
 
 const TitleItemsWrap = styled.h1`

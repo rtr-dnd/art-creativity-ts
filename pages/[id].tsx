@@ -12,7 +12,7 @@ import Event from '../components/Event'
 import { kaniTexts, kaniTitle } from '../models/text_data'
 import ImageWork from '../components/ImageWork'
 import { ImageTitle, kaniImages, kaniTitleImages } from '../components/image_data'
-import { colors } from '../styles/colors'
+import { colors } from '../styles/variables'
 import { kaniTitleTag } from '../models/kaniTitle'
 
 const LowerSection = styled.div`

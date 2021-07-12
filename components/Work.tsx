@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../styles/colors'
+import { colors } from '../styles/variables'
 
 export const Wrap = styled.div`
   height: 50vh;
