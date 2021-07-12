@@ -9,7 +9,7 @@ export default function Home (): ReactElement {
   const router = useRouter()
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    router.replace('/kani')
+    router.replace('/contents/kani')
   })
   return (
   // <div className={styles.container}>
