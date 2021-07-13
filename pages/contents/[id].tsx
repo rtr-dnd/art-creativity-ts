@@ -106,12 +106,6 @@ const Content = (): ReactElement => {
       <Wrap>
         <Head>
           <title>{titleTag(position)} | 38億年前の蟹工船</title>
-          <meta property="og:title" content="38億年前の蟹工船" />
-          {/* <meta property="og:url" content="ページのURL" /> */}
-          <meta property="og:image" content="https://kani38.vercel.app/ogp.png" />
-          <meta property="og:description" content="「おい、地獄さ行ぐんだで！」" />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:creator" content="@rtr_dnd" />
         </Head>
         <Statement isDisplayed={isStatementDisplayed} hideFunc={hideStatement}/>
         <Header onClickFunc={showStatement} iconImageSrc="/info.svg" />
