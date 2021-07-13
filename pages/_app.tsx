@@ -2,8 +2,21 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import { useRouter } from 'next/dist/client/router'
+import { useEffect } from 'react'
+import { pageview } from '../src/lib/gtag'
 
 function MyApp ({ Component, pageProps }: AppProps) {
+  const router = useRouter()
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      pageview(url)
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
   return <>
     <Head>
       <meta property="og:title" content="38億年前の蟹工船" />

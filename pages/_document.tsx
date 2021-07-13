@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-import Document, { DocumentContext } from 'next/document'
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+import { GA_TRACKING_ID } from '../src/lib/gtag'
 
 export default class MyDocument extends Document {
   static async getInitialProps (ctx: DocumentContext) {
@@ -27,5 +28,35 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal()
     }
+  }
+
+  render (): JSX.Element {
+    return (
+      <Html lang='ja'>
+        <Head>
+          {/* Google Analytics */}
+          {(GA_TRACKING_ID.length > 0) && (
+            <>
+              <script async={true} src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_TRACKING_ID}', {
+                  page_path: window.location.pathname,
+                });`
+                }}
+              />
+            </>
+          )}
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
   }
 }
